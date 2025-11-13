@@ -1,24 +1,22 @@
 [package]
 name = "AuthApi"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 
 [dependencies]
-actix-web = "4.9"
-diesel = { version = "2.1", features = ["postgres", "uuid", "chrono"]}
-diesel-async = { version = "0.7.3", features = ["postgres", "bb8"] }
-chrono = { version = "0.4", features = ["serde"] }
-dotenv = "0.15"
-serde = { version = "1.0.219", features = ["derive"] }
+diesel = { version = "2.1", features = ["postgres", "chrono", "uuid"] }
+diesel-async = { version = "0.7.4", features = ["postgres", "pool", "bb8"] }
+actix-web = "4.11.0"
+dotenv = "0.15.0"
+env_logger = "0.11.8"
+thiserror = "2.0.17"
+serde = "1.0.228"
+chrono = { version = "0.4.42", features = ["serde"] }
+serde_json = "1.0.145"
 bb8 = "0.9.0"
-argon2 = { version = "0.5.3"}
-rand_core = { version = "0.6", features = ["getrandom"]}
-thiserror = "2.0.12"
-serde_json = "1.0.141"
-regex = "1.11.1"
-jsonwebtoken = "9.3.1"
-uuid = { version = "1.17.0", features = ["v4", "fast-rng", "serde"] }
+argon2 = { version =  "0.5.3", features = ["rand"] }
+jsonwebtoken = { version = "10.2.0", features = ["rust_crypto"] }
+regex = "1.12.2"
+rand_core = { version = "0.9.3"}
+uuid = { version = "1.18.1", features = ["v4", "serde"] }
 resend-rs = "0.19.0"
-actix-web-httpauth = "0.8"
-
-
